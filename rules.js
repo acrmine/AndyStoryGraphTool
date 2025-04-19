@@ -16,7 +16,7 @@ class Location extends Scene {
         let locationData = this.engine.storyData.Locations[key];
         this.engine.show(locationData.Body);
         
-        if(locationData.Choices.length != 0) {
+        if(locationData.Choices) {
             for(let choice of locationData.Choices) {
                 this.engine.addChoice(choice.Text, choice);
             }
@@ -26,17 +26,21 @@ class Location extends Scene {
     }
 
     handleChoice(choice) {
-        if(this.engine.output.firstChild.innerHTML.charAt(0) == "&")
-        {
-            this.engine.output.removeChild(this.engine.output.firstChild);
-        }
-        this.engine.output.removeChild(this.engine.output.firstChild);
+        this.clearOutput();
 
         if(choice) {
             this.engine.show("> "+choice.Text);
             this.engine.gotoScene(Location, choice.Target);
         } else {
             this.engine.gotoScene(End);
+        }
+    }
+
+    clearOutput()
+    {
+        while(this.engine.output.firstChild)
+        {
+            this.engine.output.removeChild(this.engine.output.firstChild);
         }
     }
 }

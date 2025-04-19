@@ -50,6 +50,7 @@ class Engine {
     show(msg) {
         let div = document.createElement("div");
         div.innerHTML = msg;
+        div.style.paddingBottom = '20px';
         this.output.appendChild(div);
         this.history.push(msg);
     }
@@ -58,7 +59,6 @@ class Engine {
     {
         const arrayContainer = document.getElementById(pullupId); //inventory
         const toggleButton = document.getElementById(buttonId); //toggleInventory
-        let position = 0;
 
         toggleButton.addEventListener('click', () => 
         {
@@ -68,13 +68,6 @@ class Engine {
                 this.topZInd++;
                 this.renderPullup(pullupListId, pullupArray);
             }
-        });
-
-        arrayContainer.addEventListener("wheel", (event) =>
-        {
-            position = arrayContainer.style.top;
-            position += event.deltaY * 0.2;
-            arrayContainer.style.top = `${position}px`;
         });
     }
 

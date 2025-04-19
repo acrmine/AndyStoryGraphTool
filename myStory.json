@@ -1,10 +1,10 @@
 {
-    "Title": "Campus Life on the West Side",
-    "Credits": "Created by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Kresge",
+    "Title": "Stopping Doomsday",
+    "Credits": "Created by Andrew Richmond (acrichmo@ucsc.edu).",
+    "InitialLocation": "PathToTownHall",
     "Locations": {
-        "Kresge": {
-            "Body": "This is Kresge College, lots of nice trees.",
+        "PathToTownHall": {
+            "Body": "Walking into town intro the meteor and your job here, you are determined and ready for what comes next. Despite the many people fleeing from town screaming, you walk towards the townhall shadowed by the sight of the giant meteor approaching the eart",
             "Choices": [
                 {
                     "Text": "South",
@@ -12,20 +12,20 @@
                 }
             ]
         },
-        "Porter": {
-            "Body": "This is Porter College, the trees are nice here too.",
+        "runIntoMan": {
+            "Body": "You run into an old man who reaches out to grab you, and takes firm hold of your shoulders. You want to shove him off, but before you do, you notice his expression. He isn't terrified like the others fleeing around you, his expression is much more sad and desperate than that.\\n\\n\"I didn't... I didn't know...\" He gasps between breath. His frail voice betrays the iron grip he's now got on you. ",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Kresge"
+                    "Text": "What do you mean you didn't know?",
+                    "Target": "humorHim"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Rachel Carson"
+                    "Text": "I don't have time for this",
+                    "Target": "ignoreHim"
                 }
             ]
         },
-        "Rachel Carson": {
+        "humorHim": {
             "Body": "Rachel Carson College, more sun and fewer trees.",
             "Choices": [
                 {
@@ -38,7 +38,7 @@
                 }
             ]
         },
-        "Oakes": {
+        "ignoreHim": {
             "Body": "Oakes College, even the buildings have tree bark on them.",
             "Choices": [
                 {
