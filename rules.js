@@ -14,7 +14,18 @@ class Start extends Scene {
 class Location extends Scene {
     create(key) {
         let locationData = this.engine.storyData.Locations[key];
-        this.engine.show(locationData.Body);
+        this.engine.show(locationData.Body); 
+
+        if(locationData.keyedBodies)
+        {
+            for(let text of locationData.keyedBodies)
+            {
+                if(this.engine.inventory.indexOf(text.item) != -1)
+                {
+                    this.engine.show(text.Body);
+                }
+            }
+        }
         
         if(locationData.Choices) {
             for(let choice of locationData.Choices) {
@@ -22,6 +33,28 @@ class Location extends Scene {
             }
         } else {
             this.engine.addChoice("The end.")
+        }
+
+        if(locationData.keyedChoices)
+        {
+            for(let choice of locationData.keyedChoices)
+            {
+                if(this.engine.inventory.indexOf(choice.item) != -1)
+                {
+                    this.engine.addChoice(choice.Text, choice);
+                }
+            }
+        }
+
+        if(locationData.Items)
+        {
+            for(let items of locationData.Items)
+                {
+                    if(this.engine.inventory.indexOf(items.item) == -1)
+                    {
+                        this.engine.addItemPickup(items.Action, items);
+                    }
+                }
         }
     }
 

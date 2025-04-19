@@ -4,16 +4,46 @@
     "InitialLocation": "PathToTownHall",
     "Locations": {
         "PathToTownHall": {
-            "Body": "Walking into town intro the meteor and your job here, you are determined and ready for what comes next. Despite the many people fleeing from town screaming, you walk towards the townhall shadowed by the sight of the giant meteor approaching the eart",
+            "Body": "Walking into town intro the meteor and your job here, you are determined and ready for what comes next. Despite the many people fleeing from town screaming, you walk towards the townhall shadowed by the sight of the giant meteor approaching the earth.",
+            "keyedBodies": [
+                {
+                    "item": "test item 1",
+                    "Body": "confirmation you have that item number 1"
+                },
+                {
+                    "item": "third thing",
+                    "Body": "you need this one soon"
+                }
+            ],
             "Choices": [
                 {
-                    "Text": "South",
-                    "Target": "Porter"
+                    "Text": "Continue towards the town hall",
+                    "Target": "runIntoMan"
+                }
+            ],
+            "keyedChoices": [
+                {
+                    "item": "third thing",
+                    "Text": "You use it here",
+                    "Target": "ignoreHim"
+                },
+                {
+                    "item": "test item 3",
+                    "Text": "don't have this one yet",
+                    "Target": "humorHim"
+                }
+            ],
+            "Items": [
+                {
+                    "item": "third thing",
+                    "Descr": "You see the third thing sitting in the place.",
+                    "Action": "Grab the third thing down there",
+                    "Grabbed": "You pick it up and place it in your pocket"
                 }
             ]
         },
         "runIntoMan": {
-            "Body": "You run into an old man who reaches out to grab you, and takes firm hold of your shoulders. You want to shove him off, but before you do, you notice his expression. He isn't terrified like the others fleeing around you, his expression is much more sad and desperate than that.\\n\\n\"I didn't... I didn't know...\" He gasps between breath. His frail voice betrays the iron grip he's now got on you. ",
+            "Body": "You run into an old man who reaches out to grab you, and takes firm hold of your shoulders. You want to shove him off, but before you do, you notice his expression. He isn't terrified like the others fleeing around you, his expression is much more sad and desperate than that.\n\n\"I didn't... I didn't know...\" He gasps between breath. His frail voice betrays the iron grip he's now got on you. ",
             "Choices": [
                 {
                     "Text": "What do you mean you didn't know?",

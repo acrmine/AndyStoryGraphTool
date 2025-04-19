@@ -42,6 +42,17 @@ class Engine {
         }
     }
 
+    addItemPickup(action, data) {
+        this.show(data.Descr);
+        let button = this.actionsContainer.appendChild(document.createElement("button"));
+        button.innerText = action;
+        button.onclick = () => {
+            this.actionsContainer.removeChild(button);
+            this.show(data.Grabbed);
+            this.inventory.push(data.item);
+        }
+    }
+
     setTitle(title) {
         document.title = title;
         this.header.innerText = title;
