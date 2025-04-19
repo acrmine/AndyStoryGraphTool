@@ -58,6 +58,7 @@ class Engine {
     {
         const arrayContainer = document.getElementById(pullupId); //inventory
         const toggleButton = document.getElementById(buttonId); //toggleInventory
+        let position = 0;
 
         toggleButton.addEventListener('click', () => 
         {
@@ -67,6 +68,13 @@ class Engine {
                 this.topZInd++;
                 this.renderPullup(pullupListId, pullupArray);
             }
+        });
+
+        arrayContainer.addEventListener("wheel", (event) =>
+        {
+            position = arrayContainer.style.top;
+            position += event.deltaY * 0.2;
+            arrayContainer.style.top = `${position}px`;
         });
     }
 
