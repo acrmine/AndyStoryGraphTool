@@ -43,46 +43,62 @@
             ]
         },
         "runIntoMan": {
-            "Body": "You run into an old man who reaches out to grab you, and takes firm hold of your shoulders. You want to shove him off, but before you do, you notice his expression. He isn't terrified like the others fleeing around you, his expression is much more sad and desperate than that.\n\n\"I didn't... I didn't know...\" He gasps between breath. His frail voice betrays the iron grip he's now got on you. ",
+            "Body": "You run into an old man who reaches out to grab you, and takes firm hold of your shoulders. You want to shove him off, but before you do, you notice his expression. He isn't terrified like the others fleeing around you, his expression is much more sad and desperate than that.<br/>\"I didn't... I didn't know...\" He gasps between breaths. His frail voice betrays the iron grip he's now got on you. ",
             "Choices": [
                 {
-                    "Text": "What do you mean you didn't know?",
+                    "Text": "\"What do you mean you didn't know?\"",
                     "Target": "humorHim"
                 },
                 {
-                    "Text": "I don't have time for this",
+                    "Text": "\"I don't have time for this.\"",
                     "Target": "ignoreHim"
                 }
             ]
         },
         "humorHim": {
-            "Body": "Rachel Carson College, more sun and fewer trees.",
+            "Body": "\"This w-wasn't supposed to happen\". He looks at you with a pleading expression. \"The money they gave me was going to save my whole family\". He turns his head up to face the meteor still looming in the sky and getting closer by the moment. \"I didn't know it'd be this\".",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Porter"
-                },
-                {
-                    "Text": "South",
-                    "Target": "Oakes"
+                    "Text": "\"Wait, do you have something to do with the machine?\"",
+                    "Target": "humorHim2"
                 }
             ]
         },
         "ignoreHim": {
-            "Body": "Oakes College, even the buildings have tree bark on them.",
+            "Body": "You shrug the old man off and push past him. His mouth hangs open as if he wants to say something, but he shuts it just as quick and turns away from you with a final worried expression to follow a throng of scared civilians. You can't waste time thinking about some random person right.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Rachel Carson"
-                },
-                {
-                    "Text": "South",
-                    "Target": "Beyond"
+                    "Text": "Get to the townhall",
+                    "Target": "Entrance"
                 }
             ]
         },
-        "Beyond": {
-            "Body": "Grass, don't forget to check for ticks!"
+        "humorHim2": {
+            "Body": "Your question snaps him out of his daze and his panic returns. He backs away and disappears into the crowd before you can stop him, leaving you with a final disclosure.<br />\"The safe behind the receptionists desk has what you need! I'm sorry!\" His voice fades away as he's absorbed back into the throng of escaping people.",
+            "Choices": [
+                {
+                    "Text": "Get to the townhall",
+                    "Target": "Entrance"
+                }
+            ] 
+        },
+        "Entrance": {
+            "Body": "Stumbling and shoving through groups of fleeing townsfolk, you eventually get to the front of the townhall. It's a small wooden building with an unimpressive paneled exterior, the chipped paint telling of the economic hardships this town has experienced as of late. But none of that matters right now. You can see a strange blue light emenating from a window on the second floor. If this doesn't work... well its not like running away would have worked in the first place.",
+            "Choices": [
+                {
+                    "Text": "Enter the townhall",
+                    "Target": "MainLobby"
+                }
+            ] 
+        },
+        "MainLobby": {
+            "Body": "The ruckus outside is barely muted by the wooden walls on the inside of the lobby. You survey the room and notice a couple key points. There's a set of stairs that leads up to the second floor with an entrance covered by smaller set of double doors. The ",
+            "Choices": [
+                {
+                    "Text": "Enter the townhall",
+                    "Target": 
+                }
+            ] 
         }
     }
 }

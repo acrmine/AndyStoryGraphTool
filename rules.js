@@ -78,6 +78,14 @@ class Location extends Scene {
     }
 }
 
+class Numpad extends Scene
+{
+    create(key)
+    {
+        
+    }
+}
+
 class End extends Scene {
     create() {
         this.engine.show("<hr>");
