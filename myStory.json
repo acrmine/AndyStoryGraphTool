@@ -112,7 +112,15 @@
                     "Text": "Look closer at the safe's keypad",
                     "Target": "DeskSafe"
                 }
-            ] 
+            ],
+            "Items": [
+                {
+                    "item": "Flash Light",
+                    "Descr": "You accidentally kick an object on the ground which roles up against the toppled roller chair. You look down and notice a Flash Light. Could be useful.",
+                    "Action": "Grab the Flash Light",
+                    "Grabbed": "You lift the ancient metal thing and flick it on and off. Not super powerful but it'll work for now."
+                }
+            ]
         },
         "SecondFloorDoor": {
             "Body": "You walk up the stairway to stand face to face with a set of double doors. A brass lock holds the doors together and stops you from going further. You can see blue light from the crack in between the two doors. You can hear the rumble of the meteor approaching. Once you find a way through these doors, you can't go back.",
@@ -204,10 +212,14 @@
             ]
         },
         "MachineRoom": {
-            "Body": "The lock snaps with a loud crack and falls to the floor. You shove the doors open to reveal the machine you were briefed on glowing with a ghostly blue light as well as emmiting a soft whir. You imagined a world ending catastrophe device would be louder. Among the various input mechanisms dotting its surface, a large red lever stands out on the side of it. The rumble of the meteor is louder than ever. If you're going to figure this out, you have to do it now.",
+            "Body": "The lock snaps with a loud crack and falls to the floor. You shove the doors open to reveal the machine you were briefed on glowing with a ghostly blue light as well as emmiting a soft whir. You imagined a world ending catastrophe device would be louder. Among the various input mechanisms dotting its surface, two large pieces stand out to you. A large red and orange lever on oposite sides of the machine. The rumble of the meteor is louder than ever. If you're going to figure this out, you have to do it now.",
             "Choices": [
                 {
                     "Text": "Pull the Big Red Lever",
+                    "Target": "Death"
+                },
+                {
+                    "Text": "Pull the Big Orange Lever",
                     "Target": "Death"
                 },
                 {
@@ -242,26 +254,67 @@
             "InputLength": 2,
             "Success": 
             {
-                "Text": "The safe makes an affirmative beep and the door unlocks with a click. You look inside.",
-                "Target": "InsideSafe"
+                "Text": "You can here mechanisms going off inside the machine.",
+                "Target": "PhaseTwo"
             },
             "Failure": 
             {
-                "Text": "The safe buzzes angrily. The code wasn't correct.",
-                "Target": "DeskSafe"
+                "Text": "The blue light grows stronger and all inputs mechanisms become locked in place.",
+                "Target": "Death"
             },
             "EnterButton":
             {
-                "Label": "Enter"
-            },
-            "Leave":
-            {
-                "Text": "Look away from the numpad.",
-                "Target": "ReceptionDesk"
+                "Label": "Pull the switches"
             }
         },
+        "PhaseTwo": {
+            "Body": "You're spurred on by success, the next step should be the 4 buttons sitting a few feet about the switches. You'll have to press both of these at the same time as well.",
+            "Buttons": [
+                {
+                    "Label": "the brown button"
+                },
+                {
+                    "Label": "the turquoise button"
+                },
+                {
+                    "Label": "the blue button"
+                },
+                {
+                    "Label": "the white button"
+                }
+            ],
+            "Goal": "the blue buttonthe white button",
+            "InputLength": 2,
+            "Success": 
+            {
+                "Text": "The machine rocks violently and the light becomes purple",
+                "Target": "PhaseThree"
+            },
+            "Failure": 
+            {
+                "Text": "The blue light becomes blindingly bright suddenly and all inputs mechanisms become locked in place.",
+                "Target": "Death"
+            },
+            "EnterButton":
+            {
+                "Label": "Press the buttons"
+            }
+        },
+        "PhaseThree": {
+            "Body": "This is the last step. Sweat beads on your forehead. You need to pull one of the two big levers. If you pick the right one, you've saved the day. If you pick the wrong one, then this was all for nothing.",
+            "Choices": [
+                {
+                    "Text": "Pull the red lever",
+                    "Target": "Win"
+                },
+                {
+                    "Text": "Pull the orange lever",
+                    "Target": "Death"
+                }
+            ]
+        },
         "Death": {
-            "Body": "You fiddled with the machine as best you could but the blue light never changed as the rumbling of the meteor turned into the loudest roar you'd ever heard. You got more and more frantic as panic finally started to take over... but then you stopped. The roar had become so deafening that it felt like silence now. You wish things could have been different as you sit on that cold, lonely floor and wait for the end.<br/><br/>You Die, just like everyone else.",
+            "Body": "You fiddled with the machine as best you could but the light never changed again. The rumbling of the meteor eventually turns into the loudest roar you'd ever heard. You got more and more frantic as panic finally started to take over... but then you stopped. The roar had become so deafening that it felt like silence now. You wish things could have been different as you sit on that cold, lonely floor and wait for the end.<br/><br/>You Die, just like everyone else.",
             "Choices": [
                 {
                     "Text": "Try again",
@@ -290,6 +343,9 @@
                     "Target": "PathToTownHall"
                 }
             ]
+        },
+        "Win": {
+            "Body": "The roaring of the meteor almost instantly stops as the light turns bright red. You almost don't believe it. You sprint to the door and stumble down the stairs. You burst through the double doors and look up to see whats going on. As if by magic, the meteor has been stopped and is floating above the earth. Residents who had gone outside to greet their death with dignity wore shocked faces all around. Slowly, the meteor starts to shrink from taking up the entire sky, to occupying a hemisphere, to floating away out into space. You saved the day! You fall to your knees as you sigh in relief. You need a vacation after this one."
         }
     }
 }

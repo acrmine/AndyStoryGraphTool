@@ -159,10 +159,12 @@ class Numpad extends Location
                 {
                     display.innerHTML = display.innerHTML + "First " + button.innerText;
                     this.currentAnswer = this.currentAnswer + button.innerText;
+                    this.answerElements += 1;
                 } else
                 {
                     display.innerHTML = display.innerHTML + " then " + button.innerText;
                     this.currentAnswer = this.currentAnswer + button.innerText;
+                    this.answerElements += 1;
                 }
             }
         }
