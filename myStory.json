@@ -4,46 +4,16 @@
     "InitialLocation": "PathToTownHall",
     "Locations": {
         "PathToTownHall": {
-            "Body": "Walking into town intro the meteor and your job here, you are determined and ready for what comes next. Despite the many people fleeing from town screaming, you walk towards the townhall shadowed by the sight of the giant meteor approaching the earth.",
-            "keyedBodies": [
-                {
-                    "item": "test item 1",
-                    "Body": "confirmation you have that item number 1"
-                },
-                {
-                    "item": "third thing",
-                    "Body": "you need this one soon"
-                }
-            ],
+            "Body": "You're on a mission. You don't really need a reminder why because another glance up into the sky shows you that the giant continent crushing meteor has gotten even closer and will probably strike the earth in aproximately 30 minutes. Normally that would be curtains for everything, but you've been informed by your agency that a machine is bringing that thing to earth and that it also has the ability to push it back. You've localized the radiation it gives off to the center of this town in its townhall. You've got a lot of loved ones that you haven't said goodbye to... but if you can turn this machine around... you'll give everyone on the planet their lives back. As you push closer to the middle of this town through a sea of scared people, you steel your emotions, you'll need to think fast and logically if this is going to work.",
             "Choices": [
                 {
-                    "Text": "Continue towards the town hall",
+                    "Text": "Fight towards the townhall",
                     "Target": "runIntoMan"
-                }
-            ],
-            "keyedChoices": [
-                {
-                    "item": "third thing",
-                    "Text": "You use it here",
-                    "Target": "ignoreHim"
-                },
-                {
-                    "item": "test item 3",
-                    "Text": "don't have this one yet",
-                    "Target": "humorHim"
-                }
-            ],
-            "Items": [
-                {
-                    "item": "third thing",
-                    "Descr": "You see the third thing sitting in the place.",
-                    "Action": "Grab the third thing down there",
-                    "Grabbed": "You pick it up and place it in your pocket"
                 }
             ]
         },
         "runIntoMan": {
-            "Body": "You run into an old man who reaches out to grab you, and takes firm hold of your shoulders. You want to shove him off, but before you do, you notice his expression. He isn't terrified like the others fleeing around you, his expression is much more sad and desperate than that.<br/>\"I didn't... I didn't know...\" He gasps between breaths. His frail voice betrays the iron grip he's now got on you. ",
+            "Body": "You run into an old man who reaches out to grab you, and takes firm hold of your shoulders. You want to shove him off, but before you do, you notice his expression. He isn't terrified like the others fleeing around you, his expression is much more sad and desperate than that.<br/><br/>\"I didn't... I didn't know...\" He gasps between breaths. His frail voice betrays the iron grip he's now got on you. ",
             "Choices": [
                 {
                     "Text": "\"What do you mean you didn't know?\"",
@@ -74,7 +44,7 @@
             ]
         },
         "humorHim2": {
-            "Body": "Your question snaps him out of his daze and his panic returns. He backs away and disappears into the crowd before you can stop him, leaving you with a final disclosure.<br />\"The safe behind the receptionists desk has what you need! I'm sorry!\" His voice fades away as he's absorbed back into the throng of escaping people.",
+            "Body": "Your question snaps him out of his daze and his panic returns. He backs away into the crowd before you can stop him, shouting final words at you.<br/><br/>\"The safe behind the receptionists desk has what you need! I'm sorry!\" His voice fades away as he's absorbed back into the throng of escaping people.",
             "Choices": [
                 {
                     "Text": "Get to the townhall",
@@ -92,13 +62,234 @@
             ] 
         },
         "MainLobby": {
-            "Body": "The ruckus outside is barely muted by the wooden walls on the inside of the lobby. You survey the room and notice a couple key points. There's a set of stairs that leads up to the second floor with an entrance covered by smaller set of double doors. The ",
+            "Body": "The ruckus outside is barely muted by the walls when standing in the lobby. You survey the room and notice a couple key points. There's a set of stairs that leads up to the second floor with an entrance covered by smaller set of double doors. The main room is in disarray with a couple chairs turned over and papers scattered all about. The receptionists desk sits just beneath the stairs. Off to the left side of the room, the door to what appears to be a cleaning closet sits ajar.",
             "Choices": [
                 {
-                    "Text": "Enter the townhall",
-                    "Target": 
+                    "Text": "Walk behind the receptionists desk",
+                    "Target": "ReceptionDesk"
+                },
+                {
+                    "Text": "Check out the cleaning closet",
+                    "Target": "JanitorsCloset"
+                },
+                {
+                    "Text": "Walk up the stairs",
+                    "Target": "SecondFloorDoor"
+                }
+            ]
+        },
+        "JanitorsCloset": {
+            "Body": "There's a couple brooms, a mop, and a mop bucket on the floor. The closet is fairly deep but darkness obscures anything past the first few feet.",
+            "Choices": [
+                {
+                    "Text": "Return to the Lobby",
+                    "Target": "MainLobby"
+                }
+            ], 
+            "Items": [
+                {
+                    "item": "Crowbar",
+                    "Descr": "A crowbar hangs on a peg on the right wall. What would they need a crowbar for?",
+                    "Action": "Pick up the Crowbar",
+                    "Grabbed": "You pick up the crowbar and swing it around a little bit before stowing it away. Half Life made this look way easier."
+                }
+            ],
+            "keyedBodies": [
+                {
+                    "item": "Flash Light",
+                    "Body": "You turn on the flash light and reveal the back of the closet. A map of the town sits posted on the wall with a red line drawn from one of the houses to the middle where the town hall is. Next to the map is a sticky note with the number \"49280\" on it."
+                }
+            ]
+        },
+        "ReceptionDesk": {
+            "Body": "The receptionists desk is in a sorry state. The wood is cracked and unmaintained. Their was a computer that sat ontop of this desk but it has since been displaced to the ground behind the desk. Quite violently considering the way its lodged in the floor. A big stainless steel safe with a keypad sits hidden under the desk.",
+            "Choices": [
+                {
+                    "Text": "Return to the Lobby",
+                    "Target": "MainLobby"
+                },
+                {
+                    "Text": "Look closer at the safe's keypad",
+                    "Target": "DeskSafe"
                 }
             ] 
+        },
+        "SecondFloorDoor": {
+            "Body": "You walk up the stairway to stand face to face with a set of double doors. A brass lock holds the doors together and stops you from going further. You can see blue light from the crack in between the two doors. You can hear the rumble of the meteor approaching. Once you find a way through these doors, you can't go back.",
+            "Choices": [
+                {
+                    "Text": "Return to the Lobby",
+                    "Target": "MainLobby"
+                }
+            ],
+            "keyedChoices": [
+                {
+                    "item": "Crowbar",
+                    "Text": "Pry the lock off the door with the crowbar",
+                    "Target": "MachineRoom"
+                }
+            ]
+        },
+        "DeskSafe": {
+            "Body": "You've seen models like this one before, but you've never been much of a safe cracker.",
+            "Buttons": [
+                {
+                    "Label": "0"
+                },
+                {
+                    "Label": "1"
+                },
+                {
+                    "Label": "2"
+                },
+                {
+                    "Label": "3"
+                },
+                {
+                    "Label": "4"
+                },
+                {
+                    "Label": "5"
+                },
+                {
+                    "Label": "6"
+                },
+                {
+                    "Label": "7"
+                },
+                {
+                    "Label": "8"
+                },
+                {
+                    "Label": "9"
+                }
+            ],
+            "Goal": "49280",
+            "InputLength": 5,
+            "Success": 
+            {
+                "Text": "The safe makes an affirmative beep and the door unlocks with a click. You look inside.",
+                "Target": "InsideSafe"
+            },
+            "Failure": 
+            {
+                "Text": "The safe buzzes angrily. The code wasn't correct.",
+                "Target": "DeskSafe"
+            },
+            "EnterButton":
+            {
+                "Label": "Enter"
+            },
+            "Leave":
+            {
+                "Text": "Look away from the numpad.",
+                "Target": "ReceptionDesk"
+            }
+        },
+        "InsideSafe": {
+            "Body": "There's a couple stacks of bills in the safe as well as a Ruger Mark IV. Makes sense if the receptionist had to defend themself, but not really useful in a pinch since they'd have to unlock the safe first.",
+            "Choices": [
+                {
+                    "Text": "Close the safe and stand up",
+                    "Target":"ReceptionDesk"
+                }
+            ],
+            "Items": [
+                {
+                    "item": "Manual",
+                    "Descr": "You also see a manual sitting on a shelf in the back with a picture of the machine you were briefed on adorning the cover.",
+                    "Action": "Pick up and flip through the manual",
+                    "Grabbed": "This manual is long and really in depth. You're truly suprised by the in depth nature of this piece of technical literature. Despite the sheer quantity of information though, you're able to surmise that to reverse the machine, you need to flip the red and green switches at the same time, then push the blue and white buttons at the same time, and finally flip the big red lever on the side of it."
+                }
+            ]
+        },
+        "MachineRoom": {
+            "Body": "The lock snaps with a loud crack and falls to the floor. You shove the doors open to reveal the machine you were briefed on glowing with a ghostly blue light as well as emmiting a soft whir. You imagined a world ending catastrophe device would be louder. Among the various input mechanisms dotting its surface, a large red lever stands out on the side of it. The rumble of the meteor is louder than ever. If you're going to figure this out, you have to do it now.",
+            "Choices": [
+                {
+                    "Text": "Pull the Big Red Lever",
+                    "Target": "Death"
+                },
+                {
+                    "Text": "Start fiddling with the smaller mechanisms",
+                    "Target": "PhaseOne"
+                }
+            ]
+        },
+        "PhaseOne": {
+            "Body": "After analyzing the exterior, you know you should start with the set of 6 switches at the bottom based on the briefing. You'll need to flip two at once",
+            "Buttons": [
+                {
+                    "Label": "the red switch"
+                },
+                {
+                    "Label": "the blue switch"
+                },
+                {
+                    "Label": "the yellow switch"
+                },
+                {
+                    "Label": "the green switch"
+                },
+                {
+                    "Label": "the cyan switch"
+                },
+                {
+                    "Label": "the grey switch"
+                }
+            ],
+            "Goal": "the red switchthe green switch",
+            "InputLength": 2,
+            "Success": 
+            {
+                "Text": "The safe makes an affirmative beep and the door unlocks with a click. You look inside.",
+                "Target": "InsideSafe"
+            },
+            "Failure": 
+            {
+                "Text": "The safe buzzes angrily. The code wasn't correct.",
+                "Target": "DeskSafe"
+            },
+            "EnterButton":
+            {
+                "Label": "Enter"
+            },
+            "Leave":
+            {
+                "Text": "Look away from the numpad.",
+                "Target": "ReceptionDesk"
+            }
+        },
+        "Death": {
+            "Body": "You fiddled with the machine as best you could but the blue light never changed as the rumbling of the meteor turned into the loudest roar you'd ever heard. You got more and more frantic as panic finally started to take over... but then you stopped. The roar had become so deafening that it felt like silence now. You wish things could have been different as you sit on that cold, lonely floor and wait for the end.<br/><br/>You Die, just like everyone else.",
+            "Choices": [
+                {
+                    "Text": "Try again",
+                    "Target": "Death2"
+                },
+                {
+                    "Text": "Quit",
+                    "Target": "tryToQuit"
+                }
+            ]
+        },
+        "tryToQuit": {
+            "Body": "Well I don't really have the ability to do that so you'll have to click the x button yourself if you want to do that. It's a lot easier to just click the Try Again button",
+            "Choices": [
+                {
+                    "Text": "Try again",
+                    "Target": "Death2"
+                }
+            ]
+        },
+        "Death2": {
+            "Body": "Good on ya!",
+            "Choices": [
+                {
+                    "Text": "Yeah Yeah get on with",
+                    "Target": "PathToTownHall"
+                }
+            ]
         }
     }
 }

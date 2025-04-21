@@ -10,7 +10,7 @@ class Engine {
         this.storyDataUrl = storyDataUrl;
         this.topZInd = 0;
         this.history = [];
-        this.inventory = ["test item 1", "test item 2"];
+        this.inventory = [];
 
         this.header = document.body.appendChild(document.createElement("h1"));
         this.output = document.body.appendChild(document.createElement("div"));
@@ -50,6 +50,16 @@ class Engine {
             this.actionsContainer.removeChild(button);
             this.show(data.Grabbed);
             this.inventory.push(data.item);
+        }
+    }
+
+    addNumPadBtn(data, display)
+    {
+        let button = this.actionsContainer.appendChild(document.createElement("button"));
+        button.innerText = data.Label;
+        button.onclick = () =>
+        {
+            this.scene.handleChoice(button, display);
         }
     }
 
